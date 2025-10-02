@@ -61,5 +61,7 @@ The project lacks iterative refactoring stages; improvements such as splitting t
 Avoid Premature Optimisation
 Optimisation techniques (such as database storage, caching, or advanced algorithms) have not been considered, which is acceptable for a learning project.
 Notice: it has the problem of plagiarism because of that I have done and my file also I am mentioning my readme file in the end of this.
+<img width="468" height="623" alt="image" src="https://github.com/user-attachments/assets/ab6c9f69-0b78-4aa3-b996-68bf4096fd71" />
+
 <img width="468" height="623" alt="image" src="https://github.com/user-attachments/assets/e33afaf0-726d-4a87-873d-aac72fecf686" />
 
