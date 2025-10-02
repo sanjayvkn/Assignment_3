@@ -1,8 +1,16 @@
-# Assignment_3
-software practical work 
-                             IT5016 
-                     Assignment Part 3
-              IT Technical Fundamentals 
+                                           Report
+
+                              
+                           Software development fundamentals
+
+                                                
+                                                IT5016
+
+
+    Name: Sanjay
+ Student ID : 20250184
+                           Due date : 02/10/2025
+            Assessment 3: principle and concepts
 
 
 
@@ -12,96 +20,46 @@ software practical work
 
 
 
-    
-Name: Sanjay 
-Student ID : 20250184
-          Assessment 3: principle and concepts
 
 
-	
- 
-Project of Ferry System Booking:
+Introduction:
+This project is a Ferry Booking System made with Python. The main purpose of this project is to practice and understand how classes, objects, methods, and variables work together. A booking system usually means reserving something for a service, and here it is shown in a simple code example. The project is not a full or realistic booking system, but a learning exercise. It uses basic coding principles like keeping the code simple, avoiding repetition, using a class for logic, and storing data in lists. By doing this project, I learned how coding principles work together to make code more organized, reusable, and easy to read. It also gave me hands-on experience with object-oriented programming and how software design ideas can help in building better programs.
+ Analysis:
+The main objective of this project is to manage ferry bookings in a simplified way.  
+It includes the following features:
+Automatic assignment of unique Booking IDs.
+Tracking of Approved and Not Approved bookings.
+Central storage of all bookings for display and retrieval.
+Although small in scope, the system highlights the importance of applying software design principles to achieve clean, maintainable, and extendable code.
+Software Design Principles Used
+ K.I.S.S (Keep It Simple, Stupid)
+The system avoids unnecessary complexity and used a simple class structure with attributes and methods.
+D.R.Y (Don't Repeat Yourself)
+Shared booking data is stored in a single list (`all_bookings`) instead of duplicating records in multiple places.
+Single Responsibility Principle
 
-This is my project about Ferry booking system as You have hear booking system that means booking something for services. I have used the python for Booking system. It was created as a small learning project to practice how classes, objects, and methods work together in programming. The main goal is not to build the realistic Booking system but learn and practice the coding principals. As I have learn and implemented on my code. 
+The `BookingSystem` class handles booking-related tasks such as creation, approval, and tracking.  
+Each method has a clear, single responsibility.
+Separation of Concerns
 
-Intent of the System
-The Ferry Booking System helps us:
-•	Enter customer details
-•	Add ferry service details (like ferry name and ticket price)
-•	Approve or reject bookings with manager input
-•	Display the booking information
-•	Show booking statistics (approved, pending, not approved)
-Each booking is stored separately with its own unique ID number. This makes sure no two bookings are the same.
-How it Works
-Unique Ticket ID
-A global ticket ID starts at 1000.
-Every time a new booking is created, the ID number increases by one.
-Example : It is the start number as I have used the Ticket_ID = 1000
-After that,
-I have make the class for the booking system to run all the program in that single code.
-Example: class BookingSystem:
-Customer Information
-The program asks the user for an ID number and passenger name.
-Example: This is the customer information that system wants like:
-  def customer_info(self):
-        self.ID_Number= input("Enter Number ID: ")
-        self.name = input("Enter Passager Name: ")
+While basic, the design separates responsibilities:  
+ The global variable manages ID generation.  
+  The class manages booking logic and records.
+Clean Code > Clever Code
 
-Ferry Service Details
-The user types the ferry name and ticket price.
-If the price entered is not a number, the program shows an error Because we have given the float. 
-    def ferry_service_details(self):
-        try:
-            self.Ferry_name = input("Enter Ferry name: ")
-            self.Ticket_cost = float(input("Enter the price item($): "))
-            self.Ticket_cost+= self.Ticket_cost 
-        except ValueError : 
-            print("Error") 
+Code readability and clarity over complex or solutions.  
+  For example, clear variable names like `approval` and `Not_Approved` are used.
+ Software Design Principles Not Fully Used
+Open / Closed Principle
+The system is not fully extendable without modifying the class. Adding new booking features requires direct changes.
+Composition Over Inheritance
+No composition or modular objects are created, as everything is managed within a single class.
+Y.A.G.N.I (You Aren't Gonna Need It)
+Some basic placeholders exist (like counters) that may not be strictly necessary for the current system.
+Refactor, Refactor, Refactor
+The project lacks iterative refactoring stages; improvements such as splitting the code into multiple files have not been applied.
+Avoid Premature Optimisation
+Optimisation techniques (such as database storage, caching, or advanced algorithms) have not been considered, which is acceptable for a learning project.
+Notice: it has the problem of plagiarism because of that I have done and my file also I am mentioning my readme file in the end of this.
+<img width="468" height="623" alt="image" src="https://github.com/user-attachments/assets/e33afaf0-726d-4a87-873d-aac72fecf686" />
 
-Manager Approval
-The manager enters “Y” (yes) or “N” (no).
-Approved bookings get a reference number made from the ID.
-Not approved bookings are marked as “Not Approved.”
-    def Manager_approval(self):
-        self.approval = input("Enter Manager approval Y or N :").lower()
-        if self.approval == "y":
-            self.status = "Approved"
-            reference_num = self.ID_Number[:3] + str(self.customer_ID)
-            print(reference_num)
-
-
-Display Information
-The booking information is shown on the screen, including name, ID, status, and total price.
-    def display_booking_info(self):
-        print("\n Printing Ferry")
-        print("Number id:", self.ID_Number)
-        print("name:",self.Name)
-        print("Customer id:", self.customer_ID)
-        print("status:", self.status)
-        print("Total: $", self.Total_price)
-
-Statistics
-The system counts how many bookings are approved, pending, or not approved.
-    def booking_statistics(self):
-        total = len(BookingSystem.all_bookings)
-
-        for Fry in BookingSystem.all_bookings:
-            if Fry == "Approved":
-                self.approval +=1
-            elif Fry == "Not approved":
-                self.Not_Approvel +=1
-            elif Fry == "Pending":
-                Pending +=1
-        print("\nthe booking statistics:")
-        print(f"The total number of bookings submitted:{total}")
-        print(f" The total number of approved bookings:{self.approval}")
-        print(f" The total number of pending bookings:{self.Not_Approvel}")
-        print(f" The total number of not approved bookings:{Pending}")
- Principles Used
-•	KISS (Keep It Simple, Stupid):
-The code is kept short and simple. Only the essential features are added, so it is easy to understand.
-•	Open/Closed Principle:
-The program is open for adding new features (like more booking options), but closed for changes to the basic structure. For example, you can add new methods without rewriting the main booking class.
-•	Single Responsibility Principle:
-Each method has one clear job. For example, customer_info() only collects customer details, while Manager_approval() only deals with approval.
-<img width="468" height="537" alt="image" src="https://github.com/user-attachments/assets/14fc9953-895b-46dc-8835-80b1a5151d78" />
